@@ -18,6 +18,7 @@ import { IHowto } from 'src/models/models'
 import { CreateButton } from './elements'
 
 import { Button } from 'src/components/Button'
+import { TagDisplay } from 'src/pages/common/Tags';
 
 const styles: any = {
   layout: {
@@ -25,11 +26,6 @@ const styles: any = {
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
     padding: `${theme.spacing.unit * 4}px 0`,
-    // [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-    //   width: 1100,
-    //   marginLeft: 'auto',
-    //   marginRight: 'auto',
-    // },
   },
   link: {
     textDecoration: 'none',
@@ -52,19 +48,10 @@ export class HowtoList extends React.Component<IProps, any> {
   }
 
   public render() {
+    console.log(this.props.allHowtos)
     const { allHowtos } = this.props
     return (
       <div>
-        <Typography
-          style={{ margin: '30px auto', display: 'table' }}
-          variant="h4"
-          component="h4"
-        >
-          How-To
-        </Typography>
-        <Link to={'/how-to/create'}>
-          <CreateButton icon={'add'}>create how-to</CreateButton>
-        </Link>
         <React.Fragment>
           <div style={styles.layout}>
             {allHowtos.length === 0 ? (
@@ -98,15 +85,9 @@ export class HowtoList extends React.Component<IProps, any> {
                           <Typography gutterBottom variant="h5" component="h2">
                             {howto.tutorial_title}
                           </Typography>
-                          <div>
-                            <ClampLines
-                              text={howto.tutorial_description}
-                              lines={4}
-                              ellipsis="..."
-                              className="custom-class"
-                            />
-                          </div>
-                          <Typography>by {howto.workspace_name}</Typography>
+                          <TagDisplay
+                          tagKey={'test'}
+                          />
                         </CardContent>
                         <CardActions>
                           <Typography>PRECIOUS PLASTIC</Typography>

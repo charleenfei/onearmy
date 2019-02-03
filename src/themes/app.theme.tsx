@@ -1,5 +1,6 @@
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import { blue, green, red } from "@material-ui/core/colors";
+// import createTypography from '@material-ui/styles/typography'
 
 // A theme with custom primary and secondary color.
 // see more examples here: https://medium.freecodecamp.org/meet-your-material-ui-your-new-favorite-user-interface-library-6349a1c88a8c
@@ -7,7 +8,8 @@ import { blue, green, red } from "@material-ui/core/colors";
 
 export const theme = createMuiTheme({
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+    fontFamily: 'Karla'
   },
   palette: {
     primary: {
